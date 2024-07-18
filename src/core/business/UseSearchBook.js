@@ -1,17 +1,31 @@
-import { useState, useEffect } from "react";
-import useSearchBook from "/src/core/store/UseSearchBook.js";
+import {useState, useEffect} from "react";
+import searchBook from "/src/core/store/UseSearchBook.js";
 
-export default (path) => {
-
-    const [userData, setUserData] = useState([]);
+ const BookSearch = (
+    libraryType,
+    typeSearch,
+    searchKeyword,
+) => {
+    const [bookData, setBookData] = useState([]);
+        console.log(searchKeyword)
+    const searchBooks = async () => {
+        try {
+            const data = await searchBook( libraryType,
+                typeSearch,
+                searchKeyword);
+            console.log(data)
+            setBookData(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     useEffect(() => {
-        useSearchBook(path)
-            .then((data) => setUserData(data))
-            .catch((res) => console.error(res.status));
-    }, [path]);
+        searchBooks();
+    },[searchKeyword]);
 
+     console.log(bookData)
+    return bookData;
+}
 
-    return [userData];
-};
-
+export default BookSearch;

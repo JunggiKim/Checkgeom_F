@@ -1,5 +1,11 @@
-export default async function useSearchBook(path) {
-     path = "https://jsonplaceholder.typicode.com";
-     console.log(path)
-    return {title: "자바", author: "정기"};
+import axios from "axios";
+
+
+export default async function searchBook( libraryType,
+                                             typeSearch,
+                                             searchKeyword,) {
+    return await axios
+        .get(`http://localhost:8080/api/v1/gyeonggiDoCyberLibrarySearch/` + searchKeyword)
+        .then(response => console.error(response))
+        .catch(response => console.error(response))
 }
