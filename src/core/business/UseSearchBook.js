@@ -1,21 +1,17 @@
 import searchBook from "/src/core/store/UseSearchBook.js";
+import LibraryType from "../../domain/LibraryType.js";
 
-const BookSearch = (libraryType, typeSearch, searchKeyword) => {
-    const bookData = {
-        libraryType: '',
-        typeSearch: '',
-        searchKeyword: ''
+const BookSearch = async (libraryType, typeSearch, searchKeyword) => {
+    console.log('호출함')
+
+
+    try {
+        return await searchBook(libraryType, typeSearch, searchKeyword)
+    } catch (e) {
+        console.error(e);
+        return []
     }
-    console.log("호출함 ")
-    const searchBooks = async () => {
-        try {
-            const data = await searchBook(libraryType, typeSearch, searchKeyword);
-        } catch (error) {
-            console.error(error);
-        }
-    };
 
-    return searchBooks;
 };
 
 export default BookSearch;
