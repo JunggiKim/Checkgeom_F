@@ -19,8 +19,8 @@ class LibraryEnum {
 
  const LibraryType = new LibraryEnum({
     ALL: 'all',
-    GYEONGGIDO_CYBER_LIBRARY: 'gyeonggiDoCyberLibrary',
-    GYEONGGI_EDUCATIONAL_ELECTRONIC: 'gyeonggiEducationalElectronic',
+    GYEONGGIDO_CYBER: 'gyeonggiDoCyberLibrary',
+    GYEONGGI_EDUCATIONAL: 'gyeonggiEducationalElectronic',
     SMALL_BUSINESS: 'smallBusiness'
 });
 

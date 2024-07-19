@@ -3,22 +3,21 @@ import {useState} from "react";
 import SearchResults from "./SearchResults.jsx";
 
 export default function SearchIndex() {
-    const [libraryType, setLibraryType] = useState("");
-    const [typeSearch, setTypeSearch] = useState("");
+    const [libraryType, setLibraryType] = useState("all");
+    const [typeSearch, setTypeSearch] = useState("all");
     const [searchKeyword, setSearchKeyword] = useState("");
     const [bookData, setBookData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmitInput = async (event) => {
         setIsLoading(true)
-        event.preventDefault()
-        const result = await useBookSearch(libraryType, typeSearch, searchKeyword);
+        const resultBookData = await useBookSearch(libraryType, typeSearch, searchKeyword);
         setIsLoading(false); // 로딩 완료 상태로 변경
-        setBookData(result);
+        setBookData(resultBookData.data);
     };
     return (
         <div>
-            <h1>검색하세요!</h1>
+            <h1>검색하세요</h1>
             <div className="search_wrap fl after">
                 <span className="search fl after">
                     <label htmlFor="libary" className="blind">도서관 : </label>
