@@ -16,8 +16,6 @@ const SearchResults = React.memo(({bookData}) => {
     const moreViewLinks = bookData.moreViewLink;
     console.log(moreViewLinks)
     return (
-
-
         <div className="bookData-container">
             <div className="bookData-header">
                 <p className="bookData-count">
@@ -28,11 +26,11 @@ const SearchResults = React.memo(({bookData}) => {
                         {moreViewLinks.map((link, index) => (
                             <a
                                 key={index}
-                                href={link.url}
+                                href={link}
                                 className="moreViewLink"
                                 target="_blank"
                                 rel="noopener noreferrer">
-                                {link.text}
+                                더보기
                             </a>
                         ))}
                     </div>)}
