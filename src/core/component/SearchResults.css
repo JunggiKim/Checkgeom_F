@@ -6,33 +6,39 @@
     justify-content: center;
 }
 
-
 .bookData-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
 }
 
 .bookData-count {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
+    font-weight: bold;
 }
 
-.load-more-button {
+.moreViewLink-container {
+    display: flex;
+    gap: 8px;
+}
+
+.moreViewLink {
     background-color: #007bff;
     color: #fff;
-    border: none;
+    padding: 8px 12px;
     border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.load-more-button:hover {
+.moreViewLink:hover {
     background-color: #0056b3;
 }
-
 
 .book-card {
     background: #fff;
