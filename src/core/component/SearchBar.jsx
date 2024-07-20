@@ -1,20 +1,23 @@
-import useBookSearch from "../business/UseSearchBook.js";
+import useBookSearch from "../business/LibrarySearchService.js";
 import {useState} from "react";
 import SearchResults from "./SearchResults.jsx";
+import librarySearchService from "../business/LibrarySearchService.js";
 
-export default function SearchIndex() {
+export default function SearchBar() {
     const [libraryType, setLibraryType] = useState("all");
     const [typeSearch, setTypeSearch] = useState("all");
     const [searchKeyword, setSearchKeyword] = useState("");
     const [bookData, setBookData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmitInput = async (event) => {
+    const handleSubmitInput = async () => {
         setIsLoading(true)
-        const resultBookData = await useBookSearch(libraryType, typeSearch, searchKeyword);
+        const resultBookData = await librarySearchService.search(libraryType, typeSearch, searchKeyword);
         setIsLoading(false); // 로딩 완료 상태로 변경
         setBookData(resultBookData.data);
     };
+
+
     return (
         <div>
             <h1>검색하세요</h1>
