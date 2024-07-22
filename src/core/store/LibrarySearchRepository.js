@@ -3,7 +3,7 @@ import axiosInstance from "../../util/axiosInstance.js";
 class LibrarySearchRepository {
     async gyeonggidoCyberLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/gyeonggiDoCyberLibrarySearch/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/gyeonggiDoCyberLibrary/` + searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';
@@ -12,7 +12,7 @@ class LibrarySearchRepository {
 
     async gyeonggiEducationalLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/gyeonggiEducationalElectronicLibrary/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/gyeonggiEducationalElectronic/` + searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';
@@ -21,7 +21,7 @@ class LibrarySearchRepository {
 
     async smallBusinessLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/smallBusinessLibrary/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/smallBusiness/` + searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';
@@ -30,7 +30,7 @@ class LibrarySearchRepository {
 
     async allLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/allLibrarySearch/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/allLibrary/` + searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';

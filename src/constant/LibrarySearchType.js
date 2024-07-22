@@ -1,4 +1,4 @@
-class LibraryEnum {
+class LibrarySearchTypeEnum {
     constructor(enumObj) {
         Object.keys(enumObj).forEach(key => {
             this[key] = enumObj[key];
@@ -17,14 +17,13 @@ class LibraryEnum {
     }
 }
 
- const LibraryType = new LibraryEnum({
+ const LibrarySearchType = new LibrarySearchTypeEnum({
     ALL: 'all',
-    GYEONGGIDO_CYBER: 'gyeonggiDoCyberLibrary',
-    GYEONGGI_EDUCATIONAL: 'gyeonggiEducationalElectronic',
-    SMALL_BUSINESS: 'smallBusiness'
+    AUTHOR: 'author',
+    TITLE: 'title',
 });
 
 
 
 
-export  default LibraryType
+export  default LibrarySearchType

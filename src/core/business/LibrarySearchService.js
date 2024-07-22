@@ -1,19 +1,19 @@
 import librarySearchRepository from "/src/core/store/LibrarySearchRepository.js";
-import LibraryType from "../../domain/LibraryType.js";
+import LibraryType from "../../constant/LibraryType.js";
 
 class LibrarySearchService{
 
     search  =  async (libraryType, typeSearch, searchKeyword) => {
-        if (libraryType === LibraryType.ALL) {
+        if (libraryType === LibraryType.ALL.english) {
             return await librarySearchRepository.allLibrarySearch(typeSearch, searchKeyword)
         }
-        if (libraryType === LibraryType.GYEONGGIDO_CYBER) {
+        if (libraryType === LibraryType.GYEONGGIDO_CYBER.english) {
             return librarySearchRepository.gyeonggidoCyberLibrarySearch(typeSearch, searchKeyword);
         }
-        if (libraryType === LibraryType.GYEONGGI_EDUCATIONAL) {
+        if (libraryType === LibraryType.GYEONGGI_EDUCATIONAL.english) {
             return await librarySearchRepository.gyeonggiEducationalLibrarySearch(typeSearch, searchKeyword)
         }
-        if (libraryType === LibraryType.SMALL_BUSINESS) {
+        if (libraryType === LibraryType.SMALL_BUSINESS.english) {
             return await librarySearchRepository.smallBusinessLibrarySearch(typeSearch, searchKeyword)
         }
     };

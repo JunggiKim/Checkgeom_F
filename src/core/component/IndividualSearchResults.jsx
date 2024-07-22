@@ -1,23 +1,27 @@
 import React from "react";
-import './SearchResults.css'; // 스타일 파일을 별도로 관리
+import './SearchResults.css';
+import libraryType from "../../constant/LibraryType.js";
+import LibraryType from "../../constant/LibraryType.js"; // 스타일 파일을 별도로 관리
 
-const SearchResults = React.memo(({bookData}) => {
+const IndividualSearchResults = React.memo(({bookData}) => {
 
     console.log(bookData)
+
+// 변환된 한글 값
 
     if(bookData.length === 0){
         return (
             <p>검색된 결과가 없습니다.</p>
         )
     }
-
+        //TODO
     const bookList = bookData.bookDtoList;
     const totalCount = bookData.totalCount;
     const moreViewLinks = bookData.moreViewLink;
-    console.log(moreViewLinks)
     return (
         <div className="bookData-container">
             <div className="bookData-header">
+                <p> 검색한 도서관 {bookData.libraryTypeText}</p>
                 <p className="bookData-count">
                     총 검색 결과: {totalCount}개
                 </p>
@@ -56,4 +60,5 @@ const SearchResults = React.memo(({bookData}) => {
     );
 });
 
-export default SearchResults;
+
+export default IndividualSearchResults;
