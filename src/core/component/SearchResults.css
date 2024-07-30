@@ -11,7 +11,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
     margin-bottom: 16px;
+
+
     border-bottom: 2px solid #ddd;
     padding-bottom: 8px;
 }
@@ -23,6 +26,7 @@
 }
 
 .moreViewLink-container {
+
     display: flex;
     gap: 8px;
 }

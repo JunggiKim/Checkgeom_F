@@ -18,13 +18,14 @@ const AllSearchResults = React.memo(({AllLibraryBookData}) => {
             {bookDataList.map((libraryData, index) =>
                 (
                 <IndividualSearchResults
-                    key={index}
                     bookData={libraryData}
                 />
             ))
             }
         </div>
+
     );
+
 });
 
 export default AllSearchResults;

@@ -46,12 +46,14 @@ export default function SearchBar() {
                         <option value={LibrarySearchType.TITLE}>제목</option>
                         <option value={LibrarySearchType.AUTOR}>저자</option>
                     </select>
+
                     <input
                         type="text"
                         className="searchKeyword"
                         placeholder="검색어를 입력해 주세요"
                         autoComplete="off"
                         value={searchKeyword}
+
                         onChange={(e) => setSearchKeyword(e.target.value)}/>
                     <button
                         className="searchButton"
@@ -59,10 +61,12 @@ export default function SearchBar() {
                         disabled={isLoading}>
                     {isLoading ? `검색 중` : '검색'}
                     </button>
+
                 </span>
             </div>
             <div className="results">
                 {bookData.libraryTypeText === LibraryType.ALL.english ?
+
                     <AllSearchResults AllLibraryBookData={bookData} /> :
                     <IndividualSearchResults bookData={bookData} />
                 }
