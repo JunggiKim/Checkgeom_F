@@ -24,8 +24,6 @@ class LibraryTypeEnum {
         return Object.values(enumObj).find(item => item.english === englishName);
     }
     static getKoreanByEnglishName(enumObj, englishName) {
-        console.log(enumObj)
-        console.log(englishName)
 
         const item = this.getByEnglishName(enumObj, englishName);
         return item ? item.korean : null;

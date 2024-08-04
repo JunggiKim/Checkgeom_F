@@ -7,7 +7,7 @@ const IndividualSearchResults = React.memo(({bookData}) => {
 
     console.log(bookData)
 
-// 변환된 한글 값
+    // 변환된 한글 값
 
     if(bookData.length === 0){
         return (
@@ -20,6 +20,7 @@ const IndividualSearchResults = React.memo(({bookData}) => {
     const moreViewLinks = bookData.moreViewLink;
     return (
         <div className="bookData-container">
+
             <div className="bookData-header">
                 <p> 검색한 도서관 {bookData.libraryTypeText}</p>
                 <p className="bookData-count">

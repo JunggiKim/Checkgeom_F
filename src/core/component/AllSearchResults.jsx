@@ -23,7 +23,9 @@ const AllSearchResults = React.memo(({AllLibraryBookData}) => {
             ))
             }
         </div>
+
     );
+
 });
 
 export default AllSearchResults;
