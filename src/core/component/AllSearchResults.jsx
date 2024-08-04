@@ -10,7 +10,7 @@ const AllSearchResults = React.memo(({AllLibraryBookData}) => {
             <p>검색된 결과가 없습니다.</p>
         )
     }
-    const bookDataList = AllLibraryBookData.libraryServiceResponseList
+    const bookDataList = AllLibraryBookData.librarySearchServiceResponseList
     console.log(bookDataList)
 
     return (
@@ -18,7 +18,6 @@ const AllSearchResults = React.memo(({AllLibraryBookData}) => {
             {bookDataList.map((libraryData, index) =>
                 (
                 <IndividualSearchResults
-                    key={index}
                     bookData={libraryData}
                 />
             ))
