@@ -16,7 +16,7 @@ const IndividualSearchResults = React.memo(({bookData}) => {
     }
         //TODO
     const bookList = bookData.bookDtoList;
-    const totalCount = bookData.totalCount;
+    const totalCount = bookData.bookSearchTotalCount;
     const moreViewLinks = bookData.moreViewLink;
     return (
         <div className="bookData-container">
