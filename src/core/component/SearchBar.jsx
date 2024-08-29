@@ -65,7 +65,7 @@ export default function SearchBar() {
                 </span>
             </div>
             <div className="results">
-                {bookData.libraryTypeText === LibraryType.ALL.english ?
+                {bookData.libraryTypeText === '전체' ?
 
                     <AllSearchResults AllLibraryBookData={bookData} /> :
                     <IndividualSearchResults bookData={bookData} />
