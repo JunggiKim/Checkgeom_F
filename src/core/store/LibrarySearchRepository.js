@@ -30,7 +30,7 @@ class LibrarySearchRepository {
 
     async allLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/allLibrary/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/allLibraryVirtualThreadAsyncSearch/` + searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';

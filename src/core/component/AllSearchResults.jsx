@@ -15,17 +15,19 @@ const AllSearchResults = React.memo(({AllLibraryBookData}) => {
 
     return (
         <div className="allSearchResults-container">
-            {bookDataList.map((libraryData, index) =>
+            {bookDataList.map((libraryData) =>
                 (
                 <IndividualSearchResults
                     bookData={libraryData}
                 />
             ))
             }
+
         </div>
 
     );
 
 });
+
 
 export default AllSearchResults;
