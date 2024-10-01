@@ -4,6 +4,10 @@ import LibraryType from "../../constant/LibraryType.js";
 class LibrarySearchService{
 
     search  =  async (libraryType, typeSearch, searchKeyword) => {
+        console.log(libraryType)
+        console.log(typeSearch)
+        console.log(searchKeyword)
+
         if (libraryType === LibraryType.ALL.english) {
             return await librarySearchRepository.allLibrarySearch(typeSearch, searchKeyword)
         }

@@ -1,5 +1,9 @@
 import axiosInstance from "../../util/axiosInstance.js";
 
+
+
+// 경기교육전자도서관은 제목만 검색가능
+
 class LibrarySearchRepository {
     async gyeonggidoCyberLibrarySearch(typeSearch, searchKeyword) {
         try {
@@ -30,7 +34,7 @@ class LibrarySearchRepository {
 
     async allLibrarySearch(typeSearch, searchKeyword) {
         try {
-            return (await axiosInstance.get(`api/v1/allLibraryVirtualThreadAsyncSearch/` + searchKeyword)).data;
+            return (await axiosInstance.get(`api/v1/allLibrary/`+ searchKeyword)).data;
         } catch (e) {
             console.error(e);
             return '검색에 실패했습니다';
