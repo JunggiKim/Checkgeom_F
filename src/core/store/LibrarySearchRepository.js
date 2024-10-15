@@ -40,6 +40,14 @@ class LibrarySearchRepository {
             return '검색에 실패했습니다';
         }
     }
+    async check(typeSearch, searchKeyword) {
+        try {
+            return (await axiosInstance.get(`api/v1/ok`)).data;
+        } catch (e) {
+            console.error(e);
+            return '검색에 실패했습니다';
+        }
+    }
 }
 
 // Usage

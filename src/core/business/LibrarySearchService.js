@@ -22,6 +22,10 @@ class LibrarySearchService{
         }
     };
 
+    check = async () => await librarySearchRepository.check();
+
+
+
 }
 
 const librarySearchService = new LibrarySearchService();

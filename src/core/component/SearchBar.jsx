@@ -15,6 +15,13 @@ export default function SearchBar() {
     const [isLoading, setIsLoading] = useState(false);
     const [isAllLibrarySearch, setIsAllLibrarySearch] = useState(false);
 
+    const statusCheck = async () => {
+        const result = await librarySearchService.check(libraryType, typeSearch, searchKeyword);
+        console.log(result)
+        return result
+    }
+
+
     const handleSubmitInput = async () => {
         setIsLoading(true)
         const resultBookData = await librarySearchService.search(libraryType, typeSearch, searchKeyword);
@@ -34,7 +41,7 @@ export default function SearchBar() {
                         value={libraryType}
                         onChange={(e) => setLibraryType(e.target.value)}>
                         <option value={LibraryType.ALL.english}>전체</option>
-                        <option value= {LibraryType.GYEONGGIDO_CYBER.english}>경기도 사이버 전자 도서관</option>
+                        <option value={LibraryType.GYEONGGIDO_CYBER.english}>경기도 사이버 전자 도서관</option>
                         <option value={LibraryType.GYEONGGI_EDUCATIONAL.english}>경기 교육 전자 도서관</option>
                         <option value={LibraryType.SMALL_BUSINESS.english}>소상 공인 전자 도서관</option>
                     </select>
@@ -61,14 +68,16 @@ export default function SearchBar() {
                         disabled={isLoading}>
                     {isLoading ? `검색 중` : '검색'}
                     </button>
-
+                <button
+                    onClick={statusCheck}
+                >ok</button>
                 </span>
             </div>
             <div className="results">
                 {bookData.libraryTypeText === '전체' ?
 
-                    <AllSearchResults AllLibraryBookData={bookData} /> :
-                    <IndividualSearchResults bookData={bookData} />
+                    <AllSearchResults AllLibraryBookData={bookData}/> :
+                    <IndividualSearchResults bookData={bookData}/>
                 }
             </div>
         </div>
